@@ -1,20 +1,4 @@
 {
-    "rotmg": {
-        "444633": {
-            "name": "akldnakwldn",
-            "category": "rotmg",
-            "description": "jjpojapfojdp",
-            "time": "jkanwdojawd",
-            "uid": 444633,
-            "ids": {
-                "sent_from": 831941122560360498,
-                "message": 860862807323312178,
-                "role": 860862809633193985,
-                "category": 860862810275840001,
-                "plan": 860862811382611988,
-                "chat": 860862812209152060
-            }
-        }
-    },
+    "rotmg": {},
     "hearthstone": {}
 }
