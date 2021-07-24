@@ -5,6 +5,7 @@ from events import *
 matchtable = {
     'rotmg': "Realm of the Mad God",
     'hearthstone': "Hearthstone",
+    'terraria': "Terraria"
 }
 
 tick_emoji = '<:tick:835557074090983434>'
@@ -33,9 +34,10 @@ async def start_event(ctx, category, name, description, time):
     channel_category = await ctx.guild.create_category_channel(f"{ctx.author.display_name}'s Event", overwrites=overwrites)
     plan = await channel_category.create_text_channel(f"Event plan")
     chat = await channel_category.create_text_channel(f"Event chat")
+    vc = await channel_category.create_voice_channel(f"Event VC")
 
     """ EVENT SAVING """
-    ids = IdInfo(sent_from=ctx.channel.id, message=message.id, role=role.id, category=channel_category.id, plan=plan.id, chat=chat.id)
+    ids = IdInfo(sent_from=ctx.channel.id, message=message.id, role=role.id, category=channel_category.id, plan=plan.id, chat=chat.id, voice=vc.id)
     event = Event(category, name, description, time, ids)
     event.save_to_file()
 
@@ -63,9 +65,11 @@ async def end_event(ctx, turnout, client):
     category = client.get_channel(event.ids.category)
     plan = client.get_channel(event.ids.plan)
     chat = client.get_channel(event.ids.chat)
+    voice = client.get_channel(event.ids.voice)
     await category.delete()
     await plan.delete()
     await chat.delete()
+    await voice.delete()
 
     """ ROLE """
     role = ctx.guild.get_role(event.ids.role)

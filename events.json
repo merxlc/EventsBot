@@ -1,4 +1,22 @@
 {
-    "rotmg": {},
-    "hearthstone": {}
+    "rotmg": {
+        "962287": {
+            "name": "TESt",
+            "category": "rotmg",
+            "description": "TEST",
+            "time": "TEST",
+            "uid": 962287,
+            "ids": {
+                "sent_from": 835552685863862313,
+                "message": 868593850808147988,
+                "role": 868593859825917982,
+                "category": 868593865064607754,
+                "plan": 868593866608095304,
+                "chat": 868593867564408842,
+                "voice": 868593868432617522
+            }
+        }
+    },
+    "hearthstone": {},
+    "terraria": {}
 }
